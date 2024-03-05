@@ -1,1 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ресторан "Fartuk"</title>
+<style>
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+        color: #333;
+    }
+
+    .background {
+        background-image: url('https://res.cloudinary.com/dwdxk7uti/image/upload/v1709483633/bg-hero_uooz4k.jpg');
+        background-size: cover;
+        background-position: center;
+        filter: brightness(0.2);
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;       
+    }
+
+    .navbar {
+        padding: 10px;
+        width: 100%;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1000;
+        background-color: rgba(0, 0, 0, 0.7);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .navbar img {
+        max-width: 100px;
+        height: auto;
+        margin-left: 20px;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+        width: 30px;
+        height: 30px;
+        position: relative;
+        margin-right: 20px;
+    }
+
+    .menu-line {
+        width: 100%;
+        height: 3px;
+        background-color: #fff;
+        margin: 5px 0;
+    }
+
+    .container {
+        text-align: center;
+        margin-top: 100px;
+    }
+
+    .header {
+        font-size: 48px;
+        font-weight: bold;
+        color: #fff;
+        animation: bounce 2s infinite;
+    }
+
+    .rotate {
+        width: 80%;
+        max-width: 80%;
+        height: auto;
+        display: block;
+        margin: 0 auto;
+        animation: rotate 30s linear infinite;
+        z-index: -1; /* Установить нижний уровень индекса z */
+    }
+
+    @keyframes rotate {
+        from {
+            transform: rotate(0deg);
+        }
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    @keyframes bounce {
+        0%, 100% {
+            transform: translateY(0);
+        }
+        50% {
+            transform: translateY(-10px);
+        }
+    }
+    .yellow-btn { 
+    background-color: #ffcc00; 
+    color: #333; 
+    padding: 10px 20px; 
+    text-decoration: none; 
+    border-radius: 5px; 
+    font-weight: bold; 
+    transition: background-color 0.3s ease; 
+    } 
+    .yellow-btn:hover { 
+        background-color: #ffdb4d; 
+    }
+    
+    .button-container { 
+        margin-top: 30px;
+    }
+    
+    .empty-space {
+        height: 100px;
+    }
+    .footer {
+        background-color: rgba(0, 0, 0, 0.7);
+        color: #fff;
+        padding: 15px;
+        text-align: center;
+        position: relative;
+        bottom: 0;
+        left: 0;
+        width: 95%;        
+    }
+    
+    /* Скрытый блок меню */
+    .menu {
+        position: fixed;
+        top: 60px;
+        right: -200px; /* Скрыть меню за пределы экрана */
+        width: 200px;
+        height: 100%;
+        background-color: rgba(0, 0, 0, 0.9);
+        transition: right 0.3s ease; /* Добавить анимацию */
+        z-index: 1001; /* Установить более высокий уровень индекса z */
+    }
+    
+    .menu.show-menu {
+        right: 0; /* Показать меню */
+    }
+    
+    .menu-item {
+        padding: 10px 20px;
+        color: #fff;
+        text-decoration: none;
+        display: block;
+        transition: background-color 0.3s ease;
+    }
+    
+    .menu-item:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+    }
+</style>
+</head>
+<body>
+    <div class="background"></div>
+
+    <div class="navbar">
+        <img src="https://res.cloudinary.com/dwdxk7uti/image/upload/v1709484782/ko1ing.png" alt="Restaurant Logo">
+        <div class="menu-icon" onclick="toggleMenu()">
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+            <div class="menu-line"></div>
+        </div>
+    </div>
+    
+    <!-- Скрытое меню -->
+    <div class="menu">
+        <a href="#" class="menu-item">Басты бет</a>
+        <a href="menu.html" class="menu-item">Мәзір</a>
+        <a href="#" class="menu-item">Қосым. Ақпараттар</a>
+        <a href="#" class="menu-item">Біз туралы</a>
+    </div>
+
+    <div class="container">
+        <h1 class="header">Фартук - отбасылық мейрамхана</h1>
+        <img src="https://res.cloudinary.com/dwdxk7uti/image/upload/v1709483331/hero_drvm5d.png" alt="Rotating Image" class="rotate">
+        <div class="button-container"><a href="https://api.whatsapp.com/send/?phone=77024081838&text&type=phone_number&app_absent=0" class="yellow-btn">Үстел брондау</a>
+        </div>
+        <div class="empty-space"></div>
+    </div>
+    
+    <footer class="footer">
+        <p>Ул. Санкибай батыра 76 
+        (+7 702 408 1838)
+            &copy; 2024 "Fartuk". Барлық авторлық құқық қорғалған.</p>
+    </footer>
+
+    <script>
+        function toggleMenu() {
+            var menu = document.querySelector('.menu');
+            menu.classList.toggle('show-menu');
+        }
+    </script>
+</body>
+</html>
 
